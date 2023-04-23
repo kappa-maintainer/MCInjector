@@ -31,7 +31,7 @@ public class ApplyMap extends ClassVisitor
 
     public ApplyMap(MCInjectorImpl injector, ClassVisitor cn)
     {
-        super(Opcodes.ASM6, cn);
+        super(Opcodes.ASM9, cn);
         this.injector = injector;
     }
 

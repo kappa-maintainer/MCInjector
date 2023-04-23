@@ -15,7 +15,7 @@ public class AccessFixer extends ClassVisitor
     private String className;
     public AccessFixer(ClassVisitor cv)
     {
-        super(ASM6, cv);
+        super(ASM9, cv);
     }
 
     @Override
