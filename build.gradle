@@ -1,7 +1,7 @@
 plugins {
   //id 'net.minecrell.licenser' version '0.3'
   id 'org.ajoberstar.grgit' version '4.1.1'
-  id 'com.github.johnrengelman.shadow' version '7.1.2'
+  id 'com.github.johnrengelman.shadow' version '8.1.1'
 }
 
 apply plugin: 'java'
@@ -29,18 +29,18 @@ def gitVersion() {
 }
 
 jar {
-    classifier 'thin'
+    archiveClassifier = 'thin'
     manifest.attributes('Main-Class': 'de.oceanlabs.mcp.mcinjector.MCInjector')
     manifest.attributes('Implementation-Version': project.version)
 }
 shadowJar {
-    classifier 'fatjar'
+    archiveClassifier = 'fatjar'
     manifest.attributes('Main-Class': 'de.oceanlabs.mcp.mcinjector.MCInjector')
     manifest.attributes('Implementation-Version': project.version)
 }
 
 task sourceJar(type: Jar) {
-    classifier 'sources'
+    archiveClassifier = 'sources'
     from sourceSets.main.allJava
 }
 
@@ -58,8 +58,8 @@ if (changelog.exists()) {
 }
 
 dependencies {
-    implementation 'org.ow2.asm:asm:9.4'
-    implementation 'org.ow2.asm:asm-tree:9.4'
+    implementation 'org.ow2.asm:asm:9.6'
+    implementation 'org.ow2.asm:asm-tree:9.6'
     implementation 'net.sf.jopt-simple:jopt-simple:5.0.4'
     implementation 'com.google.code.gson:gson:2.10.1'
 }
